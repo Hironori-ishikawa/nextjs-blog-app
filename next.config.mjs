@@ -1,4 +1,8 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
-
-export default nextConfig;
+export const reactStrictMode = true;
+export const experimental = {
+  appDir: true,
+};
+export const images = {
+  domains: ['azytmuykcefdpqzkeprr.supabase.co'],
+};
