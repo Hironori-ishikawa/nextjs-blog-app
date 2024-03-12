@@ -38,7 +38,7 @@ const Profile = () => {
         const { data: userData, error } = await supabase
           .from('profiles')
           .select()
-          .eq('id', user.id ?? "") // Null 合体演算子 (??) 型定義エラー回避のため
+          .eq('id', user.id ?? "") // Null 合体演算子 (??) 型定義
           .single()
 
         // プロフィール取得失敗
