@@ -40,7 +40,7 @@ const BlogList = async () => {
             avatar_url: userData!.avatar_url,
           }
 
-          return <BlogItem key={blog.id}{...blog} />
+          return <BlogItem comments={[]} key={blog.id} {...blog} />
         })
       )}
     </div>
