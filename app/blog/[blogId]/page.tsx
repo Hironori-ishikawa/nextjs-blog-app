@@ -17,12 +17,19 @@ const BlogDetailPage = async ({ params }: PageProps) => {
   // ブログの詳細取得
   const { data: blogData } = await supabase
     .from('blogs')
-    .select()
+    .select('*, comments(id, content, created_at, profiles(name, avatar_url), likes(user_id))') // コメント取得
     .eq('id', params.blogId)
+    .returns<BlogListType>() // 型を指定
     .single()
 
   // ブログは存在しない場合
   if (!blogData) return notFound()
+
+  // [Tips]
+  // blogsテーブルのuser_idをprofile_idに変更することで、ブログと同時にプロフィールも取得できるようになる。
+  // supabase.from('blog').select(`id, created_at, title, content, image_url, profiles(name, avatar_url), likes(user_id))`).eq('id', params.blogId).returns<BlogListType>().single()
+  // こうすると別でプロフィールを取得する必要がなくなる。
+
 
   // プロフィール情報を取得
   const { data: profileData } = await supabase
@@ -41,6 +48,7 @@ const BlogDetailPage = async ({ params }: PageProps) => {
     user_id: blogData.user_id,
     name: profileData!.name,
     avatar_url: profileData!.avatar_url,
+    comments: blogData.comments,
   }
 
   return <BlogDetail blog={blog} />

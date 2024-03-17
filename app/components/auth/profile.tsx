@@ -187,7 +187,7 @@ const Profile = () => {
         {loadingLogout ? (
           <Loading />
         ) : (
-          <div className="inline-block text-red-500 cursor-pointer" onClick={logout}>
+          <div className="font-bold bg-red-500 hover:brightness-95 rounded-md w-full p-2 inline-block text-white cursor-pointer" onClick={logout}>
             ログアウト
           </div>
         )}

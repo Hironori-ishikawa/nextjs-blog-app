@@ -14,7 +14,6 @@ const Page = () => {
         {/* @ts-ignore */}
         <BlogList />
       </Suspense>
-      <div>メインページ</div>
     </div>
   )
 }

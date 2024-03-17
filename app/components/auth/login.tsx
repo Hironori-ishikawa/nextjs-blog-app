@@ -40,7 +40,7 @@ const Login = () => {
   }
 
   return (
-    <div className="mx-w-sm mx-auto">
+    <div className="max-w-sm mx-auto">
       <form onSubmit={onSubmit}>
 
         {/* メールアドレス */}
