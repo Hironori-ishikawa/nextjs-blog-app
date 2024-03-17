@@ -15,7 +15,7 @@ const BlogDetailPage = async ({ params }: PageProps) => {
   const supabase = createClient()
 
   // ブログの詳細取得
-  const { data: blogData } = await supabase
+  const { data: blogData }: any = await supabase
     .from('blogs')
     .select('*, comments(id, content, created_at, profiles(name, avatar_url), likes(user_id))') // コメント取得
     .eq('id', params.blogId)
