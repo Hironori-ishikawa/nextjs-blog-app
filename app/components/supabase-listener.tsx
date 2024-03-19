@@ -16,13 +16,19 @@ const SupabaseListener = ({ serverAccessToken }: { serverAccessToken?: string })
     const getSession = async () => {
       const { data } = await supabase.auth.getSession()
 
-      if (data.session) {
-        // ユーザーIDにとメールアドレスを状態管理に設定する。
-        setUser({
-          id: data.session.user.id,
-          email: data.session.user.email,
-        })
-      }
+      // if (data.session) {
+      //   // ユーザーIDにとメールアドレスを状態管理に設定する。
+      //   setUser({
+      //     id: data.session.user.id,
+      //     email: data.session.user.email,
+      //   })
+      // }
+
+      //ユーザーID毎にメールアドレスを状態管理に設定
+      setUser({
+        id: data.session ? data.session.user.id : '',
+        email: data.session ? data.session?.user.email : '',
+      })
     }
     // リフレッシュ時にセッション情報取得
     getSession()
@@ -30,7 +36,7 @@ const SupabaseListener = ({ serverAccessToken }: { serverAccessToken?: string })
     //ログイン、ログアウトした時に認証状態を監視
     const {
       data: { subscription },
-    } = supabase.auth.onAuthStateChange((event, session) => {
+    } = supabase.auth.onAuthStateChange((_event, session) => {
       setUser({ id: session?.user.id, email: session?.user.email })
 
       // アクセストークンチェック

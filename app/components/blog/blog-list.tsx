@@ -40,7 +40,7 @@ const BlogList = async () => {
             avatar_url: userData!.avatar_url,
           }
 
-          return <BlogItem comments={[]} key={blog.id} {...blog} />
+          return <BlogItem comments={[]} key={blog.id} {...blog} /> // comments機能を追加したためcomments={[]}を追記する。
         })
       )}
     </div>
