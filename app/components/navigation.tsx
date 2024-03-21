@@ -9,7 +9,7 @@ const Navigation = () => {
   return (
     <header className='border-b py-5'>
       <div className='container max-w-screen-xl mx-auto relative flex justify-center items-center'>
-        <Link href="/" className=' font bold text-xl cursor-pointer'>
+        <Link href="/" className=' font-bold text-xl cursor-pointer'>
           TECH BLOG
         </Link>
 
@@ -20,8 +20,10 @@ const Navigation = () => {
             </div>
           ) : (
             <div className="flex space-x-4" >
-              <Link href="/auth/login">ログイン</Link>
-              <Link href="/auth/signup">サインアップ</Link>
+              <ul>
+                <li><Link href="/auth/login">ログイン</Link></li>
+                <li><Link href="/auth/signup">サインアップ</Link></li>
+              </ul>
             </div>
           )}
         </div>

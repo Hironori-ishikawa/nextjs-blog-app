@@ -61,7 +61,7 @@ export type Database = {
         }
         Relationships: [
           {
-            foreignKeyName: "blogs_user_id_fkey"
+            foreignKeyName: "blogs_user_id_key"
             columns: ["user_id"]
             isOneToOne: false
             referencedRelation: "users"
@@ -90,7 +90,7 @@ export type Database = {
         }
         Relationships: [
           {
-            foreignKeyName: "profiles_id_fkey"
+            foreignKeyName: "profiles_id_key"
             columns: ["id"]
             isOneToOne: true
             referencedRelation: "users"
@@ -216,7 +216,7 @@ export type Database = {
         }
         Relationships: [
           {
-            foreignKeyName: "objects_bucketId_fkey"
+            foreignKeyName: "objects_bucketId_key"
             columns: ["bucket_id"]
             isOneToOne: false
             referencedRelation: "buckets"

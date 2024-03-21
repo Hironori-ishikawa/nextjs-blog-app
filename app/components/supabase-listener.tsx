@@ -27,7 +27,7 @@ const SupabaseListener = ({ serverAccessToken }: { serverAccessToken?: string })
       //ユーザーID毎にメールアドレスを状態管理に設定
       setUser({
         id: data.session ? data.session.user.id : '',
-        email: data.session ? data.session?.user.email : '',
+        email: data.session ? data.session.user.email : '',
       })
     }
     // リフレッシュ時にセッション情報取得
