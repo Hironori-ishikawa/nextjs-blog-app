@@ -176,7 +176,7 @@ const Profile = () => {
           ) : (
             <button
               type="submit"
-              className="font-bold bg-sky-500 hover:brightness-95 rounded-md w-full p-2 text-white text-sm">
+              className="font-bold bg-yellow-500 hover:brightness-95 rounded-md w-full p-2 text-white text-sm">
               変更
             </button>
           )}

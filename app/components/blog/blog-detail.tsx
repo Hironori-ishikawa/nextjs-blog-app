@@ -134,8 +134,8 @@ const BlogDetail = ({ blog }: PageProps) => {
             <Loading />
           ) : (
             <div className="flex items-center space-x-5">
-              <Link href={`/blog/${blog.id}/edit`}>編集</Link>
-              <div className="cursor-pointer" onClick={() => deleteBlog()}>
+              <Link className="font-bold bg-yellow-500 hover:brightness-95 rounded-md p-2 text-white" href={`/blog/${blog.id}/edit`}>編集</Link>
+              <div className="font-bold bg-red-500 hover:brightness-95 rounded-md p-2 inline-block text-white cursor-pointer" onClick={() => deleteBlog()}>
                 削除
               </div>
             </div>
@@ -244,7 +244,7 @@ const BlogDetail = ({ blog }: PageProps) => {
               ) : (
                 <button
                   type="submit"
-                  className="w-full text-white bg-yellow-500 hover:brightness-110 rounded py-1 px-8"
+                  className="w-full text-white bg-sky-500 hover:brightness-110 rounded py-1 px-8"
                 >
                   投稿
                 </button>
