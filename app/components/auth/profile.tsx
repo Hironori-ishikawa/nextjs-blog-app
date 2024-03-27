@@ -92,7 +92,7 @@ const Profile = () => {
         }
 
         // 画像のURLを取得
-        const { data: urlData } = await supabase.storage
+        const { data: urlData } = supabase.storage
           .from('profile')
           .getPublicUrl(storageData.path)
 

@@ -32,7 +32,9 @@ const Navigation = () => {
         <div className="absolute right-5">
           {user.id ? (
             <div className="flex space-x-4" >
-              <Link href="/auth/profile">プロフィール</Link>
+              <Link href="/auth/profile">
+                プロフィール
+              </Link>
             </div>
           ) : (
 
@@ -52,12 +54,8 @@ const Navigation = () => {
                     }
                   >
                     <div>
-                      <button className=' mb-3'>
-                        <li><Link href="/auth/login" onClick={handleMenuClose}>ログイン</Link></li>
-                      </button>
-                      <button className=''>
-                        <li><Link href="/auth/signup" onClick={handleMenuClose}>サインアップ</Link></li>
-                      </button>
+                      <li className='mb-3'><Link href="/auth/login" onClick={handleMenuClose}>ログイン</Link></li>
+                      <li><Link href="/auth/signup" onClick={handleMenuClose}>サインアップ</Link></li>
                     </div>
                   </ul>
                 </nav>
