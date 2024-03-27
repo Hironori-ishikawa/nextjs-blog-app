@@ -37,7 +37,7 @@ const Navigation = () => {
               </Link>
             </div>
           ) : (
-
+            // ハンバーガーメニュー
             <div className="flex space-x-4" >
               <div>
                 <nav className={

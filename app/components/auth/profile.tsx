@@ -116,7 +116,7 @@ const Profile = () => {
 
       // トップページに遷移
       router.push('/')
-      router.refresh
+      router.refresh()
     }
 
     setLoading(false)
