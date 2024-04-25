@@ -30,7 +30,7 @@ const BlogItem = (blog: BlogListType) => {
         </Link>
       </div>
       <div className="text-gray-500 text-sm">
-        {format(new Date(blog.created_at), 'yyyy/mm/dd hh:mm')}
+        {format(new Date(blog.created_at), 'yyyy/MM/dd HH:mm')}
       </div>
       <div className="font-bold text-xl">{blog.title}</div>
       <div className="mb-3 text-gray-500">{content}</div>
