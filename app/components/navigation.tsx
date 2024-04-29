@@ -50,6 +50,9 @@ const Navigation = () => {
                     <div>
                       <li className='p-5 mb-3'><Link href="/auth/profile" onClick={handleMenuClose}>プロフィール</Link></li>
                     </div>
+                    <div>
+                      <li className='p-5 mb-3'><Link href="/" onClick={handleMenuClose}>サイト</Link></li>
+                    </div>
                   </ul>
                 </nav>
               </div>
