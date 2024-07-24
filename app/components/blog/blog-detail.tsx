@@ -226,7 +226,7 @@ const BlogDetail = ({ blog }: PageProps) => {
       {renderButton()}
 
       <div className="border rounded mb-5 bg-gray-200 p-3">
-        <div className="font-bold mb-3">コメントする</div>
+        <div className="font-bold mb-3 comments">コメントする</div>
 
         {login ? (
           <form onSubmit={onSubmit}>
@@ -245,7 +245,7 @@ const BlogDetail = ({ blog }: PageProps) => {
               ) : (
                 <button
                   type="submit"
-                  className="w-full text-white bg-sky-500 hover:brightness-110 rounded py-1 px-8"
+                  className="w-full text-white bg-sky-500 hover:brightness-110 rounded py-1 px-8 comments"
                 >
                   投稿
                 </button>
@@ -265,7 +265,7 @@ const BlogDetail = ({ blog }: PageProps) => {
 
       <div className="border rounded">
         <div className="bg-gray-200 flex items-center justify-between p-3">
-          <div className="font-bold">コメント</div>
+          <div className="font-bold comments">コメント</div>
           <div>{blog.comments.length}人</div>
         </div>
 
