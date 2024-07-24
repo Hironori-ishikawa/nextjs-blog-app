@@ -192,34 +192,35 @@ const BlogDetail = ({ blog }: PageProps) => {
 
   return (
     <div className="max-w-screen-md mx-auto">
-      <div className="flex flex-col items-center justify-center mb-5">
+      <div className="flex flex-col items-center justify-center mb-5 iconsInner">
         <div className="mb-1">
           <Image
             src={blog.avatar_url ? blog.avatar_url : '/default.png'}
-            className="rounded-full"
+            className="rounded-full iconImage"
             alt="avatar"
             width={70}
             height={70}
           />
         </div>
-        <div className="font-bold text-gray-500">{blog.name}</div>
-        <div className="text-sm text-gray-500">
-          {format(new Date(blog.created_at), 'yyyy/MM/dd HH:mm')}
-        </div>
+        <div className="font-bold text-gray-500 iconName">{blog.name}</div>
+
       </div>
 
       <div className="mb-5">
-        <div className="text-center font-bold text-3*1 mb-5">{blog.title}</div>
+        <div className="text-center font-bold text-3*1 text-xl mb-5 blogInnerTitle">{blog.title}</div>
         <div className="mb-5">
           <Image
             src={blog.image_url}
-            className="rounded-lg aspect-video object-cover"
+            className="rounded-lg aspect-video object-cover border border-black"
             alt="image"
             width={1024}
             height={576}
           />
         </div>
-        <div className="leading-relaxed break-words whitespace-pre-wrap">{blog.content}</div>
+        <div className="leading-relaxed break-words whitespace-pre-wrap mb-5 blogText">{blog.content}</div>
+        <div className="text-sm text-gray-500 timeStamps">
+          {format(new Date(blog.created_at), 'yyyy/MM/dd HH:mm')}
+        </div>
       </div>
 
       {renderButton()}

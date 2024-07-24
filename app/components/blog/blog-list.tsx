@@ -3,6 +3,7 @@ import { createClient } from "@/utils/supabase-server";
 
 import BlogItem from './blog-item'
 
+
 // ブログリスト
 const BlogList = async () => {
   const supabase = createClient()
@@ -17,7 +18,7 @@ const BlogList = async () => {
   if (!blogsData) return notFound()
 
   return (
-    <div className="grid grid-cols-3 gap-5">
+    <div className="grid grid-cols-3 gap-10 blogList">
       {/* mapでasync/awaitを使用するためpromise.allを使用 */}
       {await Promise.all(
         blogsData.map(async (blogData) => {

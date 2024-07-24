@@ -4,6 +4,8 @@ import BlogList from './components/blog/blog-list'
 import BlogNewButton from './components/blog/blog-new-button'
 import Loading from './loading'
 
+import "./css/app.css"
+
 // メインページ
 const Page = () => {
   return (

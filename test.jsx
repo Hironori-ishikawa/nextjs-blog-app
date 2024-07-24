@@ -1,5 +1,3 @@
-'use client'
-
 import { useState, useEffect } from "react";
 import Link from 'next/link';
 import useStore from '@/store';
@@ -36,11 +34,9 @@ const Navigation = () => {
   };
 
   return (
-    <header className={isScrolled ? "fixed top-0 left-0 right-0 bg-white border-b py-3 z-50 " : "py-3"}>
+    <header className={isScrolled ? "fixed top-0 left-0 right-0 bg-white border-b py-3 z-50 transition duration-300" : "py-5"}>
       <div className='container max-w-screen-xl mx-auto relative flex justify-between items-center'>
-        <Link href="/"
-          onClick={handleMenuClose}
-          className='font-bold text-xl cursor-pointer titleName'>
+        <Link href="/" className='font-bold text-xl cursor-pointer'>
           TECH BLOG
         </Link>
 
@@ -76,8 +72,8 @@ const Navigation = () => {
           <nav
             className={
               isOpen
-                ? "fixed top-12 right-0 left-0 h-screen w-full bg-white flex flex-col justify-center items-center navMenu"
-                : "fixed top-12 right-full h-screen w-full bg-white flex flex-col justify-center items-center navMenu"
+                ? "fixed top-full right-0 left-0 h-screen w-full bg-white flex flex-col justify-center items-center transition duration-300"
+                : "fixed top-full right-0 left-full h-screen w-full bg-white flex flex-col justify-center items-center transition duration-300"
             }
           >
             <ul className="flex flex-col gap-6 text-xl">

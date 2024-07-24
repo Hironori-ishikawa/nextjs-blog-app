@@ -1,0 +1,71 @@
+/* レスポンシブ */
+@media screen and (max-width:767px) {
+
+  .py-3 {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .titleName {
+    font-size: 16px;
+  }
+
+  .navMenu {
+    top: 2rem;
+  }
+
+  .mainContainer {
+    padding-left: 2.25rem;
+    padding-right: 2.25rem;
+  }
+
+  .blogList {
+    display: block;
+  }
+
+  .blogItems {
+    height: auto;
+    margin: auto;
+  }
+
+  .itemImage {
+    height: auto;
+    width: 100%;
+    border: solid 1px #777777;
+  }
+
+  .blogTitle {
+    font-size: 14px;
+  }
+
+  .blogInnerTitle {
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+
+  .blogText {
+    font-size: 12px;
+  }
+
+  .icons {
+    margin-bottom: 50px;
+  }
+
+  .iconsInner {
+    margin-bottom: 0px;
+    display: ruby-text;
+  }
+
+  .iconImage {
+    width: 25px;
+    height: 25px;
+  }
+
+  .iconName {
+    font-size: 12px;
+  }
+
+  .timeStamps {
+    font-size: 10px;
+  }
+}

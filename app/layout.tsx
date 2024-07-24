@@ -26,7 +26,7 @@ const RootLayout = async ({ children }: { children: React.ReactNode }) => {
           <div className="flex flex-col min-h-screen">
             <Navigation />
 
-            <main className="flex-1 container max-w-screen-xl mx-auto px-5 py-10">{children}</main>
+            <main className="flex-1 container max-w-screen-xl mx-auto px-5 py-5 mainContainer">{children}</main>
             <footer className="py-5 border-t">
               <div className="text-center text-sm text-gray-500">
                 TECH BLOG @ H.R.I HI Portfolio
