@@ -6,7 +6,6 @@ import useStore from '@/store';
 
 const Navigation = () => {
   const { user } = useStore();
-  const [isOpen, setOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -27,19 +26,11 @@ const Navigation = () => {
     };
   }, []);
 
-  const handleMenuOpen = () => {
-    setOpen(!isOpen);
-  };
-
-  const handleMenuClose = () => {
-    setOpen(false);
-  };
 
   return (
     <header className={isScrolled ? "fixed top-0 left-0 right-0 bg-white border-b py-3 z-50 " : "py-3"}>
       <div className='container max-w-screen-xl mx-auto relative flex justify-between items-center'>
         <Link href="/"
-          onClick={handleMenuClose}
           className='font-bold text-xl cursor-pointer titleName'>
           TECH BLOG
         </Link>
@@ -47,46 +38,15 @@ const Navigation = () => {
         <div className="flex items-center">
           <button
             className="z-50 space-y-2 mb:hidden p-3"
-            onClick={handleMenuOpen}
             aria-label="Open Navigation Menu"
           >
-            <span
-              className={
-                isOpen
-                  ? "block w-6 h-0.5 bg-gray-600 translate-y-2.5 rotate-45 duration-300"
-                  : "block w-6 h-0.5 bg-gray-600 duration-300"
-              }
-            />
-            <span
-              className={
-                isOpen
-                  ? "block opacity-0 duration-300"
-                  : "block w-6 h-0.5 bg-gray-600 duration-300"
-              }
-            />
-            <span
-              className={
-                isOpen
-                  ? "block w-6 h-0.5 bg-gray-600 -rotate-45 duration-300"
-                  : "block w-6 h-0.5 bg-gray-600 duration-300"
-              }
-            />
-          </button>
 
-          <nav
-            className={
-              isOpen
-                ? "fixed top-12 right-0 left-0 h-screen w-full bg-white flex flex-col justify-center items-center navMenu"
-                : "fixed top-12 right-full h-screen w-full bg-white flex flex-col justify-center items-center navMenu"
-            }
-          >
-            <ul className="flex flex-col gap-6 text-xl">
+            <ul className="flex flex-col gap-6 text-md">
               {user.id ? (
                 <>
                   <li>
                     <Link
-                      href="/auth/profile"
-                      onClick={handleMenuClose}>プロフィール
+                      href="/auth/profile">プロフィール
                     </Link>
                   </li>
                   {/* 他のメニューアイテムを追加 */}
@@ -96,19 +56,13 @@ const Navigation = () => {
                   <li>
                     <Link
                       href="/auth/login"
-                      onClick={handleMenuClose}>ログイン
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/auth/signup"
-                      onClick={handleMenuClose}>新規作成
+                    >ログイン
                     </Link>
                   </li>
                 </>
               )}
             </ul>
-          </nav>
+          </button>
         </div>
       </div>
     </header>

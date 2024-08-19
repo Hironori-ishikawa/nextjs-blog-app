@@ -82,13 +82,21 @@ const Login = () => {
           )}
         </div>
 
-        <div className="text-center text-sm">アカウントは未登録ですか？</div>
-        <div className="text-center text-sm">
-          <Link href="/auth/signup" className="text-gray-500 font-bold">
-            サインアップ
+        <div className="text-sm">
+          アカウントは未登録ですか？</div>
+
+        <div className="text-sm mt-2">
+          登録するとできること
+          <li className="mt-1">記事の投稿</li>
+          <li>記事へのコメント</li>
+        </div>
+        <div className="text-center text-md mt-3">
+          <Link
+            href="/auth/signup"
+            className="text-gray-500 font-bold">
+            【新規登録】
           </Link>
         </div>
-
       </form>
     </div>
   )
