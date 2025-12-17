@@ -12,7 +12,8 @@ type PageProps = {
 
 // ブログ詳細
 const BlogDetailPage = async ({ params }: PageProps) => {
-  const supabase = createClient()
+  const supabase = await createClient()
+
 
   // ブログの詳細取得
   const { data: blogData }: any = await supabase // anyでなんでも入力できるようにした。

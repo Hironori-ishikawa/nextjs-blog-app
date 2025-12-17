@@ -1,25 +1,34 @@
-import { createMiddlewareClient } from "@supabase/auth-helpers-nextjs";
-import { NextResponse } from "next/server";
+import { NextResponse } from 'next/server'
+import type { NextRequest } from 'next/server'
+import { createServerClient } from '@supabase/ssr'
 
-import type { NextRequest } from "next/server";
-import type { Database } from "./utils/database.types";
-
-// ミドルウェア
-export const middleware = async (req: NextRequest) => {
+export async function middleware(req: NextRequest) {
   const res = NextResponse.next()
 
-  const supabase = createMiddlewareClient<Database>({ req, res })
+  const supabase = createServerClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+    {
+      cookies: {
+        get(name: string) {
+          return req.cookies.get(name)?.value
+        },
+        set(name: string, value: string, options: any) {
+          res.cookies.set({ name, value, ...options })
+        },
+        remove(name: string, options: any) {
+          res.cookies.set({ name, value: '', ...options })
+        },
+      },
+    }
+  )
 
-  const {
-    data:{session},
-  } = await supabase.auth.getSession()
-
-  // 未認証状態で新規稿画面に遷移した場合は、ログイン画面にリダイレクト
-  if (!session && req.nextUrl.pathname.startsWith('/blog/new')) {
-    const redirectUrl = req.nextUrl.clone()
-    redirectUrl.pathname = '/auth/login'
-    return NextResponse.redirect(redirectUrl)
-  }
+  // セッションを取得するだけ（必須）
+  await supabase.auth.getSession()
 
   return res
+}
+
+export const config = {
+  matcher: ['/((?!_next/static|_next/image|favicon.ico).*)'],
 }

@@ -1,8 +1,11 @@
 /** @type {import('next').NextConfig} */
-export const reactStrictMode = true;
-export const experimental = {
-  appDir: true,
+const nextConfig = {
+  reactStrictMode: true,
+
+  // experimental は削除（appDir は今は不要）
+  images: {
+    domains: ['azytmuykcefdpqzkeprr.supabase.co'],
+  },
 };
-export const images = {
-  domains: ['azytmuykcefdpqzkeprr.supabase.co'],
-};
+
+export default nextConfig;

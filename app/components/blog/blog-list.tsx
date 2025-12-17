@@ -6,7 +6,8 @@ import BlogItem from './blog-item'
 
 // ブログリスト
 const BlogList = async () => {
-  const supabase = createClient()
+  const supabase = await createClient()
+
 
   //ブログリストの取得
   const { data: blogsData } = await supabase

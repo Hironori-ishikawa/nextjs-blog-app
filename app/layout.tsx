@@ -11,7 +11,8 @@ export const revalidate = 0
 
 // レイアウト
 const RootLayout = async ({ children }: { children: React.ReactNode }) => {
-  const supabase = createClient()
+  const supabase = await createClient()
+
 
   // セッション情報を取得
   const {

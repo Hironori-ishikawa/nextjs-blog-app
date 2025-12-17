@@ -12,7 +12,8 @@ type PageProps = {
 
 // ブログ詳細ページ
 const BlogEditPage = async ({ params }: PageProps) => {
-  const supabase = createClient()
+  const supabase = await createClient()
+
 
   // ブログ詳細取得
   const { data: blog } = await supabase.from('blogs').select().eq('id', params.blogId).single()
